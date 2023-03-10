@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Movies</title>
+    <link rel="shortcut icon" href="Images/AK.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins&family=Ubuntu&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav id="nav-bar">
+        <div id="l-nav">
+            <a href="https://adityakhadeak.github.io/" target="_blank"> <img src="Images/AK.png" alt=""> </a>
+            <ul id="nav-links">
+                <li id="movies" class="active-now" onclick="Movies()"><a href="#">Movies</a></li>
+                <li id="tv-shows" onclick="TvShows()"><a href="#">Tv-Shows</a></li>
+            </ul>
+        </div>
+        <div id="r-nav">
+            <a href="https://github.com/adityakhadeak" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <i class="fa-solid fa-bars" id="fa-bars" onclick="showmobnav()"></i>
+        </div>
+        <div id="mobile-nav">
+            <ul id="mobile-nav-links">
+                <li id="movies" class="active-now" onclick="Movies()"><a href="#">Movies</a></li>
+                <li id="tv-shows" onclick="TvShows()"><a href="#">Tv-Shows</a></li>
+                <a href="https://github.com/adityakhadeak"><i class="fa-brands fa-github"></i></a>
+                <i class="fa-solid fa-xmark"  id="fa-xmark" onclick="hidemobnav()"></i>
+            </ul>
+        </div>
+    </nav>
+    <div id="main-container">
+        <div id="welcom-search">
+            <div id="welcom-con">
+                <h1>Welcome..</h1>
+                <h3>Unlimited movies, TV shows and more to discover. Explore now.</h3>
+            </div>
+            <div id="search-con">
+                <form id="form" onsubmit="search()" action="#">
+                    <div id="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input  type="text" id="search-input" placeholder="Search for a movie or tv-show" required>
+                    </div>
+                    <input type="submit" id="submit-btn" value="Search">
+                </form>
+            </div>
+        </div>
+        <div id="movies-con">
+
+           
+            <div id="movie-navigation">
+                <ul id="movie-nav" class="movie-navigation-list active-list">
+                    <li class="nav-movie active-tab" onclick="loadTrending('trending')"><a href="#">Trending</a>
+                    </li>
+                    <li class="nav-movie" onclick="loadPopular('popular')"><a href="#">Popular</a></li>
+                    <li class="nav-movie" onclick="loadUpcoming('upcoming')" id="last"><a href="#">Upcoming</a></li>
+                </ul>
+                <ul id="tv-nav" class="tv-navigation-list">
+                    <li class="nav-tv active-tab"  onclick="loadTv()"><a href="#">Popular</a></li>
+                    <li class="nav-tv" onclick="loadToday()"><a href="#">Airing Today</a></li>
+                    <li class="nav-tv" onclick="loadTop()" id="last"><a href="#">Top Rated</a></li>
+                </ul>
+            </div>
+
+            <div id="movies-con-right">
+                <p id="now-showing">Trending Movies</p>
+                <div id="all-movies-con">
+
+                </div>
+                <button id="load-more" class="trending"  onclick="loadMore()">Load More</button>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="footer">
+        <p>All the data is taken from TMDB & all data belongs to TMDB. Data is used only for Educational Purpose</p>
+    </div>
+    <script src="https://kit.fontawesome.com/c1d45e04f7.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

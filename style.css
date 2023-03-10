@@ -1,0 +1,551 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;           
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+    
+}
+
+#nav-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 50px;
+    justify-content: space-between;
+    background-color: #000000db;
+    border-bottom: solid 0.5px #515050;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    transition: top 0.5s;
+}
+
+#l-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#l-nav img {
+    filter: invert(100%);
+    width: 60px;
+    margin-top: 5px;
+}
+
+#r-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#mobile-nav {
+    background-color: black;
+    position: absolute;
+    top: -206px;
+    width: 100%;
+    left: 0;
+    transition: all 0.5s;
+    z-index: 3;
+}
+
+#mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 20px;
+}
+
+#mobile-nav-links li {
+    margin: 10px 0;
+
+}
+
+#mobile-nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+#nav-links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0 20px;
+}
+
+#nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+#fa-bars {
+    font-size: 30px;
+    color: white;
+    display: none;
+}
+
+.fa-github {
+    font-size: 30px;
+    padding: 12px;
+    color: white;
+}
+
+.fa-github:hover {
+    background-color: #262626;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+#nav-links li {
+    margin: 0 20px;
+    padding: 12px;
+    width: max-content;
+}
+
+#nav-links li:hover {
+    background-color: #262626;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: 100%;
+}
+
+#welcom-search::before {
+    content: '';
+    background-image: url(Images/mcu-posters.avif);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    filter: blur(1px) brightness(0.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: inset 0 -13px 37px white;
+}
+
+#welcom-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+}
+
+#welcom-con {
+    padding-left: 30px;
+    z-index: 1;
+    text-shadow: 1px 1px 10px black;
+}
+
+#welcom-search h1 {
+    font-size: 45px;
+    font-weight: bolder;
+    color: white;
+    margin-bottom: 7px;
+}
+
+#welcom-search h3 {
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    margin-top: 7px;
+}
+
+#search-con {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10px;
+
+}
+
+.fa-magnifying-glass {
+    font-size: 30px;
+    margin: 0px 0px;
+    border-right: solid 0.5px rgb(245 197 24);
+    padding: 15px 11px;
+    color: black;
+    position: absolute;
+    left: 0px;
+
+}
+
+#form {
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-bar {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+
+}
+
+#search-input {
+    padding: 17.5px;
+    width: 100%;
+    padding-left: 60px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 0px;
+    outline: 3px solid rgb(245 197 24);
+}
+
+#submit-btn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: black;
+    font-weight: bold;
+    background-color: rgb(245 197 24);
+    width: 130px;
+    font-size: 17px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#submit-btn:hover {
+    background-color: rgb(196, 154, 0);
+}
+
+#movies-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+    padding: 0 100px;
+
+}
+
+#movies-con-left {
+    position: relative;
+}
+
+#movie-navigation {
+    position: relative;
+    margin: 0;
+}
+
+.movie-navigation-list {
+    display: flex;
+    list-style: none;
+    font-size: 23px;
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+    display: none;
+}
+
+.movie-navigation-list li a {
+    text-decoration: none;
+    color: white;
+}
+
+#now-showing {
+    font-size: 28px;
+    margin-left: 42px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: rgb(245 197 24);
+}
+
+.nav-movie {
+    margin: 15px 40px;
+    position: relative;
+    width: 144px;
+    text-align: center;
+
+}
+
+.nav-movie::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: rgb(245 197 24);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: all 0.5s;
+}
+
+
+
+#movies-con-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#all-movies-con {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 25px;
+    position: relative;
+    border-radius: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 1px 1px 10px;
+    width: 180px;
+    background-color: white;
+    box-shadow: 1px 1px 20px rgb(245 197 24);
+}
+.movie-overview{
+    height: 270px;
+    position: absolute;
+    background-color: rgb(245 197 24 / 84%);
+    margin: 0;
+    padding-top: 18px;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif; 
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: none;
+    transition: display 0.5s ease;
+    width: 180px;
+    top:0;
+}
+
+.movie-poster {
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 180px;
+}
+
+.movie-name a {
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+    font-weight: bolder;
+}
+
+.movie-name a:hover {
+    color: rgb(100, 100, 100);
+
+}
+
+.movie-name {
+
+    width: 165px;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.dateofmovies {
+    font-size: 13px;
+    color: rgb(88, 87, 87);
+    margin: 15px 0;
+    margin-left: 10px;
+    margin-top: 5px;
+
+}
+
+.overview-btn{
+    padding: 2px;
+    margin: 2px auto;
+    font-size: 10px;
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    width: 180px;
+    border: none;
+    background-color: rgb(245 197 24);
+    border-top-right-radius: 10px;
+    display: none;
+    border-top-left-radius: 10px;
+}
+
+#load-more {
+    cursor: pointer;
+    padding: 15px;
+    width: 50vw;
+    color: black;
+    font-weight: bolder;
+    background-color: rgb(245 197 24);
+    margin: 20px auto;
+    border: solid 2px rgb(255 255 255);
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+#load-more:hover {
+    background-color: rgb(196, 154, 0);
+}
+
+
+#footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 0.5px #515050;
+}
+#footer p{
+    text-align: center;
+    padding: 5px;
+}
+
+
+/* For TV-Shows */
+
+.tv-navigation-list {
+    display: flex;
+    list-style: none;
+    font-size: 23px;
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+    display: none;
+}
+
+.active-list {
+    display: flex;
+}
+
+.tv-navigation-list li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-tv::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: rgb(245 197 24);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: all 0.5s;
+}
+
+.active-tab::after {
+    width: 100%;
+}
+
+.nav-tv {
+    margin: 15px 40px;
+    position: relative;
+    width: 144px;
+    text-align: center;
+}
+
+
+@media screen and (max-width:660px) {
+
+    #nav-bar {
+        padding: 5px 20px;
+    }
+    #nav-links {
+        display: none;
+    }
+
+    #fa-xmark {
+        color: white;
+        font-size: 25px;
+    }
+
+    #r-nav a {
+        display: none;
+    }
+
+    #fa-bars {
+        display: block;
+    }
+
+    .fa-magnifying-glass {
+        font-size: 30px;
+        padding: 6px 11px;
+    }
+
+    #search-input {
+        padding: 8.5px;
+        padding-left: 60px;
+
+    }
+
+    #welcom-con {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #welcom-search h1 {
+        font-size: 35px;
+    }
+
+    #welcom-search h3 {
+        font-size: 20px;
+    }
+
+    #movie-navigation ul {
+        flex-direction: column;
+    }
+
+    #now-showing {
+        font-size: 24px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #movies-con {
+        padding: 0 50px;
+    }
+    
+    .movie{
+        width: 200px;
+    }
+    .movie-poster{
+        width: 200px;
+    }
+    .movie-overview{
+        width: 200px;
+        height:  300px;
+        padding-top: 15px;
+    }
+
+    
+.overview-btn{
+   left: 0px;
+    display: block;
+    width: 200px
+}
+}
+
