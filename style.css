@@ -329,7 +329,7 @@ body {
 .movie-overview{
     height: 270px;
     position: absolute;
-    background-color: rgb(245 197 24 / 84%);
+    background-color: rgb(245 197 24 / 100%);
     margin: 0;
     padding-top: 18px;
     padding: 10px;
@@ -515,15 +515,20 @@ body {
         display: block;
     }
 
+    #welcom-search {
+        width: 88%;
+    }
     .fa-magnifying-glass {
         font-size: 30px;
         padding: 6px 11px;
     }
-
+    #search-bar{
+        width: 66vw;
+    }
     #search-input {
         padding: 8.5px;
         padding-left: 60px;
-
+        border-radius: 5px;
     }
 
     #welcom-con {
